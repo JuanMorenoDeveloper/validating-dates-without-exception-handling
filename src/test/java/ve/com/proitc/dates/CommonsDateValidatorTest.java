@@ -17,4 +17,9 @@ class CommonsDateValidatorTest {
   void givenInvalidDate_whenIsValidWithApacheCommons_thenGetFalse() {
    assertFalse(commonsDateValidator.isValid("2020-X2-20"));
   }
+
+  @Test
+  void givenNullDate_whenIsValidWithApacheCommons_thenGetFalse() {
+    assertFalse(commonsDateValidator.isValid(null));
+  }
 }

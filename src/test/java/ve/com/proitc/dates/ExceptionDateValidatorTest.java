@@ -1,6 +1,7 @@
 package ve.com.proitc.dates;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -17,5 +18,11 @@ class ExceptionDateValidatorTest {
   @Test
   void givenInvalidDate_whenIsValidWithException_thenGetFalse() {
     assertFalse(exceptionDateValidator.isValid("2020-X2-20"));
+  }
+
+  @Test
+  void givenNullDate_whenIsValidWithException_thenGetFalse() {
+    assertThrows(NullPointerException.class,
+        () -> exceptionDateValidator.isValid(null));
   }
 }
