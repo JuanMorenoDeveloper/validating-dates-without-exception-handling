@@ -1,12 +1,14 @@
 package ve.com.proitc.dates;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
-interface DateValidator {
+interface DateParser {
 
   String DATE_PATTERN = "yyyy-MM-dd";
   DateTimeFormatter formatter = java.time.format.DateTimeFormatter
       .ofPattern(DATE_PATTERN);
 
-  boolean isValid(String date);
+  Optional<LocalDate> tryParse(String date);
 }
